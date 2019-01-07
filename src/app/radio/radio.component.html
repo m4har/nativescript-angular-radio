@@ -1,0 +1,16 @@
+<StackLayout>
+  <ListView [items]="data" height="100" separatorColor="transparent">
+    <ng-template let-item="item">
+      <StackLayout>
+        <StackLayout (tap)="checkedData = item.id" marginTop="5" orientation="horizontal" *ngIf="checkedData == item.id">
+          <Image marginRight="5" src="~/images/checked.png" height="17" width="17"></Image>
+          <Label style="color: #666666" [text]="item.data" ></Label>
+        </StackLayout>
+        <StackLayout (tap)="checkedData = item.id" marginTop="5" orientation="horizontal" *ngIf="checkedData !== item.id">
+          <Image marginRight="5" src="~/images/unchecked.png"  height="17" width="17"></Image>
+          <Label style="color: #666666" [text]="item.data" ></Label>
+        </StackLayout>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</StackLayout>
